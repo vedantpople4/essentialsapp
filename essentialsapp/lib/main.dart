@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,13 +30,30 @@ class HomePage extends StatelessWidget{
       ),
       body: const Center(
         child: Text(
-          'This is the home page okay',
+          'This is the home page of our app',
           style: TextStyle(fontSize: 24),
         ),
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.white,
+        height: 70,
+        items: <Widget>[
+          Icon(Icons.add,size: 50,),
+          Icon(Icons.list,size: 50,),
+          Icon(Icons.add_circle,size: 50,),
+          Icon(Icons.keyboard_arrow_down,size: 50,),
+          Icon(Icons.headset,size: 50,),
+        ],
+        color: Colors.black,
+        buttonBackgroundColor: Colors.white,
+        animationCurve: Curves.easeInOut,
+        animationDuration: Duration(milliseconds: 200),
       ),
     );
   }
 }
+
+
 
 
 
