@@ -28,10 +28,84 @@ class HomePage extends StatelessWidget{
         title: const Text('The Essential Services App'),
         backgroundColor: Colors.black,
       ),
-      body: const Center(
-        child: Text(
-          'This is the home page of our app',
-          style: TextStyle(fontSize: 24),
+      body: new Center(
+        child: Card(
+          elevation: 0,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Card(
+                    elevation : 20,
+                    child: Column(
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: (){},
+                          child: Text('This is Service 1'),
+                          style: TextButton.styleFrom(
+                            primary: Colors.black
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Card(
+                    elevation : 20,
+                    child: Column(
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: (){},
+                          child: Text('This is Service 2'),
+                          style: TextButton.styleFrom(
+                              primary: Colors.black
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Card(
+                    elevation : 20,
+                    child: Column(
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: (){},
+                          child: Text('This is Service 3'),
+                          style: TextButton.styleFrom(
+                              primary: Colors.black
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Card(
+                    elevation: 20,
+                    child: Column(
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: (){},
+                          child: Text('This is Service 4'),
+                          style: TextButton.styleFrom(
+                              primary: Colors.black
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: CurvedNavigationBar(
