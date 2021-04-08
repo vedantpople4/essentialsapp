@@ -1,10 +1,9 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:essentialsapp/Service1.dart';
 import 'package:essentialsapp/Service2.dart';
 import 'package:essentialsapp/Service3.dart';
 import 'package:essentialsapp/Service4.dart';
-import 'package:essentialsapp/TodoList.dart';
+//import 'package:essentialsapp/TodoList.dart';
 
 
 
@@ -150,24 +149,47 @@ class HomePage extends StatelessWidget{
           ),
         ),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.white,
-        height: 50,
-        items: <Widget>[
-          Icon(Icons.add,size: 50),
-          Icon(Icons.list,size: 50,),
-          Icon(Icons.add_circle,size: 50,),
-          Icon(Icons.keyboard_arrow_down,size: 50,),
-          Icon(Icons.person,size: 50,),
+      bottomNavigationBar: BottomNavigationBar(
+        //currentIndex: _currentIndex,
+        //onTap: onTabTapped,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.camera_outlined),
+            label: 'Camera',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people_alt),
+            label: 'About Us',
+          ),
         ],
-        color: Colors.black,
-        buttonBackgroundColor: Colors.white,
-        animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 200),
       ),
+
+
+      // CurvedNavigationBar(
+      //   backgroundColor: Colors.white,
+      //   height: 50,
+      //   items: <Widget>[
+      //     Icon(Icons.add,size: 50,),
+      //     Icon(Icons.list,size: 50,),
+      //     Icon(Icons.add_circle,size: 50,),
+      //     Icon(Icons.keyboard_arrow_down,size: 50,),
+      //     Icon(Icons.person,size: 50,),
+      //   ],
+      //   color: Colors.black,
+      //   buttonBackgroundColor: Colors.white,
+      //   animationCurve: Curves.easeInOut,
+      //   animationDuration: Duration(milliseconds: 200),
+      //   onTap: ,
+      // ),
     );
   }
 }
+
+
 
 
 

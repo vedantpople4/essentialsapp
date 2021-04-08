@@ -10,8 +10,6 @@ launchroute() async {
   }
 }
 
-
-
 class Service1 extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -38,7 +36,7 @@ class Service1 extends StatelessWidget{
                       children: <Widget>[
                         TextButton(
                           onPressed: () => launchroute(),
-                          child: Text('This is Service 1.1'),
+                          child: Text('Hospitals Near Me'),
                           style: TextButton.styleFrom(
                               primary: Colors.black
                           ),
