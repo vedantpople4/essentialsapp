@@ -4,6 +4,7 @@ import 'package:essentialsapp/Service1.dart';
 import 'package:essentialsapp/Service2.dart';
 import 'package:essentialsapp/Service3.dart';
 import 'package:essentialsapp/Service4.dart';
+import 'package:essentialsapp/TodoList.dart';
 
 
 
@@ -45,50 +46,58 @@ class HomePage extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Card(
-                    elevation : 20,
-                    child: Column(
-                      children: <Widget>[
-                        Image(
-                          image: AssetImage('images/hospital-room.png'),
-                          height: 40,
-                          width: 40,
-                        ),
-                        TextButton(
-                          onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context)=> Service1())
-                            );
-                            },
-                          child: Text('This is Service 1'),
-                          style: TextButton.styleFrom(
-                            primary: Colors.black
+                  Container(
+                    height: 150,
+                    width: 150,
+                    child: Card(
+                      elevation : 20,
+                      child: Column(
+                        children: <Widget>[
+                          Image(
+                            image: AssetImage('images/hospital-room.png'),
+                            height: 80,
+                            width: 80,
                           ),
-                        )
-                      ],
+                          TextButton(
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context)=> Service1())
+                              );
+                              },
+                            child: Text('Healthcare'),
+                            style: TextButton.styleFrom(
+                              primary: Colors.black
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  Card(
-                    elevation : 20,
-                    child: Column(
-                      children: <Widget>[
-                        Image(
-                          image: AssetImage('images/ingredients.png'),
-                          height: 40,
-                          width: 40,
-                        ),
-                        TextButton(
-                          onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (context)=> Service2())
-                            );
-                          },
-                          child: Text('This is Service 2'),
-                          style: TextButton.styleFrom(
-                              primary: Colors.black
+                  Container(
+                    height:150,
+                    width:150,
+                    child: Card(
+                      elevation : 20,
+                      child: Column(
+                        children: <Widget>[
+                          Image(
+                            image: AssetImage('images/ingredients.png'),
+                            height:80,
+                            width:80,
                           ),
-                        )
-                      ],
+                          TextButton(
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context)=> Service2())
+                              );
+                            },
+                            child: Text('Grocery'),
+                            style: TextButton.styleFrom(
+                                primary: Colors.black
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -145,7 +154,7 @@ class HomePage extends StatelessWidget{
         backgroundColor: Colors.white,
         height: 50,
         items: <Widget>[
-          Icon(Icons.add,size: 50,),
+          Icon(Icons.add,size: 50),
           Icon(Icons.list,size: 50,),
           Icon(Icons.add_circle,size: 50,),
           Icon(Icons.keyboard_arrow_down,size: 50,),
