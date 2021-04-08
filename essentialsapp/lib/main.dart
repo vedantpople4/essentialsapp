@@ -1,5 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:essentialsapp/Service1.dart';
+import 'package:essentialsapp/Service2.dart';
+import 'package:essentialsapp/Service3.dart';
+import 'package:essentialsapp/Service4.dart';
+
+
 
 void main() {
   runApp(MyApp());
@@ -43,8 +49,17 @@ class HomePage extends StatelessWidget{
                     elevation : 20,
                     child: Column(
                       children: <Widget>[
+                        Image(
+                          image: AssetImage('images/hospital-room.png'),
+                          height: 40,
+                          width: 40,
+                        ),
                         TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context)=> Service1())
+                            );
+                            },
                           child: Text('This is Service 1'),
                           style: TextButton.styleFrom(
                             primary: Colors.black
@@ -57,8 +72,17 @@ class HomePage extends StatelessWidget{
                     elevation : 20,
                     child: Column(
                       children: <Widget>[
+                        Image(
+                          image: AssetImage('images/ingredients.png'),
+                          height: 40,
+                          width: 40,
+                        ),
                         TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context)=> Service2())
+                            );
+                          },
                           child: Text('This is Service 2'),
                           style: TextButton.styleFrom(
                               primary: Colors.black
@@ -77,8 +101,13 @@ class HomePage extends StatelessWidget{
                     elevation : 20,
                     child: Column(
                       children: <Widget>[
+                        
                         TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context)=> Service3())
+                            );
+                          },
                           child: Text('This is Service 3'),
                           style: TextButton.styleFrom(
                               primary: Colors.black
@@ -92,7 +121,11 @@ class HomePage extends StatelessWidget{
                     child: Column(
                       children: <Widget>[
                         TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context)=> Service4())
+                            );
+                          },
                           child: Text('This is Service 4'),
                           style: TextButton.styleFrom(
                               primary: Colors.black
@@ -110,13 +143,13 @@ class HomePage extends StatelessWidget{
       ),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.white,
-        height: 70,
+        height: 50,
         items: <Widget>[
           Icon(Icons.add,size: 50,),
           Icon(Icons.list,size: 50,),
           Icon(Icons.add_circle,size: 50,),
           Icon(Icons.keyboard_arrow_down,size: 50,),
-          Icon(Icons.headset,size: 50,),
+          Icon(Icons.person,size: 50,),
         ],
         color: Colors.black,
         buttonBackgroundColor: Colors.white,
