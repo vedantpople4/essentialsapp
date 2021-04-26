@@ -46,8 +46,8 @@ class HomePage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: 150,
-                    width: 150,
+                    height: 120,
+                    width: 120,
                     child: Card(
                       elevation : 20,
                       child: Column(
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget{
                                 builder: (context)=> Service1())
                               );
                               },
-                            child: Text('Healthcare'),
+                            child: Text('Hospital'),
                             style: TextButton.styleFrom(
                               primary: Colors.black
                             ),
@@ -73,8 +73,8 @@ class HomePage extends StatelessWidget{
                     ),
                   ),
                   Container(
-                    height:150,
-                    width:150,
+                    height:120,
+                    width:120,
                     child: Card(
                       elevation : 20,
                       child: Column(
@@ -105,51 +105,70 @@ class HomePage extends StatelessWidget{
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Card(
-                    elevation : 20,
-                    child: Column(
-                      children: <Widget>[
-                        
-                        TextButton(
-                          onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (context)=> Service3())
-                            );
-                          },
-                          child: Text('This is Service 7'),
-                          style: TextButton.styleFrom(
-                              primary: Colors.black
+                  Container(
+                    height: 120,
+                    width: 120,
+                    child: Card(
+                      elevation : 20,
+                      child: Column(
+                        children: <Widget>[
+                          Image(
+                            image: AssetImage('images/hospital-room.png'),
+                            height: 80,
+                            width: 80,
                           ),
-                        )
-                      ],
+                          TextButton(
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context)=> Service1())
+                              );
+                            },
+                            child: Text('Medicines'),
+                            style: TextButton.styleFrom(
+                                primary: Colors.black
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                  Card(
-                    elevation: 20,
-                    child: Column(
-                      children: <Widget>[
-                        TextButton(
-                          onPressed: (){
-                            Navigator.push(context, MaterialPageRoute(
-                                builder: (context)=> Service4())
-                            );
-                          },
-                          child: Text('This is Service 4'),
-                          style: TextButton.styleFrom(
-                              primary: Colors.black
+                  Container(
+                    height:120,
+                    width:120,
+                    child: Card(
+                      elevation : 20,
+                      child: Column(
+                        children: <Widget>[
+                          Image(
+                            image: AssetImage('images/ingredients.png'),
+                            height:80,
+                            width:80,
                           ),
-                        )
-                      ],
+                          TextButton(
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context)=> Service2())
+                              );
+                            },
+                            child: Text('Electronics'),
+                            style: TextButton.styleFrom(
+                                primary: Colors.black
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
-
             ],
           ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black,
         //currentIndex: _currentIndex,
         //onTap: onTabTapped,
         items: [
@@ -158,8 +177,16 @@ class HomePage extends StatelessWidget{
             label: 'Home',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.list),
+            label: 'List',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.camera_outlined),
             label: 'Camera',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people_alt),
+            label: 'About Us',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.people_alt),

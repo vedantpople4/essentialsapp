@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-
+launchroute() async {
+  const url = 'https://www.google.co.in/maps/search/groceries+near+me/@19.8566804,75.2535253,12z/data=!4m4!2m3!5m2!2e3!4e2';
+  if (await canLaunch(url)) {
+    await launch(url, forceSafariVC: false,forceWebView: true);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 class Service2 extends StatelessWidget{
   @override
@@ -27,8 +35,8 @@ class Service2 extends StatelessWidget{
                     child: Column(
                       children: <Widget>[
                         TextButton(
-                          onPressed: (){},
-                          child: Text('This is Service 2.1'),
+                          onPressed: () => launchroute(),
+                          child: Text('Groceries Near Me'),
                           style: TextButton.styleFrom(
                               primary: Colors.black
                           ),
@@ -42,7 +50,7 @@ class Service2 extends StatelessWidget{
                       children: <Widget>[
                         TextButton(
                           onPressed: (){},
-                          child: Text('This is Service 2.2'),
+                          child: Text('This is Service 1.2'),
                           style: TextButton.styleFrom(
                               primary: Colors.black
                           ),
@@ -62,7 +70,7 @@ class Service2 extends StatelessWidget{
                       children: <Widget>[
                         TextButton(
                           onPressed: (){},
-                          child: Text('This is Service 2.3'),
+                          child: Text('This is Service 1.3'),
                           style: TextButton.styleFrom(
                               primary: Colors.black
                           ),
@@ -76,7 +84,7 @@ class Service2 extends StatelessWidget{
                       children: <Widget>[
                         TextButton(
                           onPressed: (){},
-                          child: Text('This is Service 2.4'),
+                          child: Text('This is Service 1.4'),
                           style: TextButton.styleFrom(
                               primary: Colors.black
                           ),
