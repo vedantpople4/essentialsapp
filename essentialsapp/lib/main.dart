@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:essentialsapp/Service1.dart';
 import 'package:essentialsapp/Service2.dart';
-import 'package:essentialsapp/Service3.dart';
-import 'package:essentialsapp/Service4.dart';
+//import 'package:essentialsapp/Service3.dart';
+//import 'package:essentialsapp/Service4.dart';
 //import 'package:essentialsapp/TodoList.dart';
-
-
 
 void main() {
   runApp(MyApp());
@@ -161,6 +159,41 @@ class HomePage extends StatelessWidget{
                   ),
                 ],
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    height: 120,
+                    width: 240,
+                    child: Card(
+                      elevation : 20,
+                      child: Column(
+                        children: <Widget>[
+                          Image(
+                            image: AssetImage('images/hospital-room.png'),
+                            height: 80,
+                            width: 80,
+                          ),
+                          TextButton(
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context)=> Service1())
+                              );
+                            },
+                            child: Text('Medicines'),
+                            style: TextButton.styleFrom(
+                                primary: Colors.black
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+
+                ],
+              ),
+
             ],
           ),
         ),
@@ -179,6 +212,7 @@ class HomePage extends StatelessWidget{
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
             label: 'List',
+
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.camera_outlined),
