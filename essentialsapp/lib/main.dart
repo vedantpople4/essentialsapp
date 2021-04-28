@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:essentialsapp/Service1.dart';
 import 'package:essentialsapp/Service2.dart';
-//import 'package:essentialsapp/Service3.dart';
-//import 'package:essentialsapp/Service4.dart';
-//import 'package:essentialsapp/TodoList.dart';
+import 'package:essentialsapp/Service3.dart';
+import 'package:essentialsapp/Service4.dart';
+import 'package:essentialsapp/TodoList.dart';
 
 void main() {
   runApp(MyApp());
@@ -111,14 +111,14 @@ class HomePage extends StatelessWidget{
                       child: Column(
                         children: <Widget>[
                           Image(
-                            image: AssetImage('images/hospital-room.png'),
+                            image: AssetImage('images/drugs.png'),
                             height: 80,
                             width: 80,
                           ),
                           TextButton(
                             onPressed: (){
                               Navigator.push(context, MaterialPageRoute(
-                                  builder: (context)=> Service1())
+                                  builder: (context)=> Service3())
                               );
                             },
                             child: Text('Medicines'),
@@ -138,14 +138,14 @@ class HomePage extends StatelessWidget{
                       child: Column(
                         children: <Widget>[
                           Image(
-                            image: AssetImage('images/ingredients.png'),
+                            image: AssetImage('images/responsive.png'),
                             height:80,
                             width:80,
                           ),
                           TextButton(
                             onPressed: (){
                               Navigator.push(context, MaterialPageRoute(
-                                  builder: (context)=> Service2())
+                                  builder: (context)=> Service4())
                               );
                             },
                             child: Text('Electronics'),
@@ -164,24 +164,19 @@ class HomePage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: 120,
+                    height: 40,
                     width: 240,
                     child: Card(
                       elevation : 20,
                       child: Column(
                         children: <Widget>[
-                          Image(
-                            image: AssetImage('images/hospital-room.png'),
-                            height: 80,
-                            width: 80,
-                          ),
                           TextButton(
                             onPressed: (){
                               Navigator.push(context, MaterialPageRoute(
-                                  builder: (context)=> Service1())
+                                  builder: (context)=> TodoList())
                               );
                             },
-                            child: Text('Medicines'),
+                            child: Text('Make List'),
                             style: TextButton.styleFrom(
                                 primary: Colors.black
                             ),
