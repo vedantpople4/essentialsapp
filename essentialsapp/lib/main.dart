@@ -4,6 +4,16 @@ import 'package:essentialsapp/Service2.dart';
 import 'package:essentialsapp/Service3.dart';
 import 'package:essentialsapp/Service4.dart';
 import 'package:essentialsapp/TodoList.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+launchroute() async {
+  const url = 'https://www.cowin.gov.in/home';
+  if (await canLaunch(url)) {
+    await launch(url, forceSafariVC: false,forceWebView: true);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 void main() {
   runApp(MyApp());
@@ -38,7 +48,9 @@ class HomePage extends StatelessWidget{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
+
             children: <Widget>[
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -157,6 +169,31 @@ class HomePage extends StatelessWidget{
                       ),
                     ),
                   ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    height: 40,
+                    width: 240,
+                    child: Card(
+                      elevation : 20,
+                      child: Column(
+                        children: <Widget>[
+                          TextButton(
+                            onPressed: () => launchroute(),
+                            child: Text('Book Vaccination Slot'),
+                            style: TextButton.styleFrom(
+                                primary: Colors.black
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+
                 ],
               ),
               Row(

@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+launchroute() async {
+  const url = 'https://www.google.co.in/maps/search/electronics+near+me/@19.8566804,75.2535253,12z/data=!4m4!2m3!5m2!2e3!4e2';
+  if (await canLaunch(url)) {
+    await launch(url, forceSafariVC: false,forceWebView: true);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
 
 
 class Service4 extends StatelessWidget{
@@ -27,8 +36,8 @@ class Service4 extends StatelessWidget{
                     child: Column(
                       children: <Widget>[
                         TextButton(
-                          onPressed: (){},
-                          child: Text('This is Service 4.1'),
+                          onPressed: () => launchroute(),
+                          child: Text('Electronics Near Me'),
                           style: TextButton.styleFrom(
                               primary: Colors.black
                           ),
