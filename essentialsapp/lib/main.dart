@@ -9,7 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 launchroute() async {
   const url = 'https://www.cowin.gov.in/home';
   if (await canLaunch(url)) {
-    await launch(url, forceSafariVC: false,forceWebView: true);
+    await launch(url);
   } else {
     throw 'Could not launch $url';
   }
@@ -18,7 +18,7 @@ launchroute() async {
 launchroutenew() async {
   const url = 'https://www.mygov.in/covid-19';
   if (await canLaunch(url)) {
-    await launch(url, forceSafariVC: false,forceWebView: true);
+    await launch(url);
   } else {
     throw 'Could not launch $url';
   }

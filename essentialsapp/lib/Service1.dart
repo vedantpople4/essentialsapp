@@ -10,6 +10,33 @@ launchroute() async {
   }
 }
 
+launchroute2() async {
+  const url = 'https://www.google.co.in/maps/search/orthopedic+near+me/@19.856976,75.2535252,12z/data=!4m4!2m3!5m2!2e3!4e2';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+launchroute3() async {
+  const url = 'https://www.google.co.in/maps/search/physio+near+me/@19.8572715,75.253525,12z/data=!3m1!4b1';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+launchroute4() async {
+  const url = 'https://www.google.co.in/maps/search/homeopathy+near+me/@19.8890373,75.3489263,15z/data=!3m1!4b1';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
 class Service1 extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -25,7 +52,7 @@ class Service1 extends StatelessWidget{
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Container(
-                height: 40,
+                height: 60,
                 width: 240,
                 child: Card(
                       elevation : 20,
@@ -43,15 +70,15 @@ class Service1 extends StatelessWidget{
                     ),
               ),
               Container(
-                height: 40,
+                height: 60,
                 width: 240,
                 child: Card(
                       elevation : 20,
                       child: Column(
                         children: <Widget>[
                           TextButton(
-                            onPressed: (){},
-                            child: Text('This is Service 1.2'),
+                            onPressed: () => launchroute2(),
+                            child: Text('Orthopedic Near Me'),
                             style: TextButton.styleFrom(
                                 primary: Colors.black
                             ),
@@ -61,15 +88,15 @@ class Service1 extends StatelessWidget{
                     ),
               ),
               Container(
-                height: 40,
+                height: 60,
                 width: 240,
                 child: Card(
                       elevation : 20,
                       child: Column(
                         children: <Widget>[
                           TextButton(
-                            onPressed: (){},
-                            child: Text('This is Service 1.3'),
+                            onPressed: () => launchroute3(),
+                            child: Text('Physio Near Me'),
                             style: TextButton.styleFrom(
                                 primary: Colors.black
                             ),
@@ -79,15 +106,15 @@ class Service1 extends StatelessWidget{
                     ),
               ),
                   Container(
-                    height: 40,
+                    height: 60,
                     width: 240,
                     child: Card(
                       elevation: 20,
                       child: Column(
                         children: <Widget>[
                           TextButton(
-                            onPressed: (){},
-                            child: Text('This is Service 1.4'),
+                            onPressed: ()=>launchroute4(),
+                            child: Text('Homeopathy Near Me'),
                             style: TextButton.styleFrom(
                                 primary: Colors.black
                             ),

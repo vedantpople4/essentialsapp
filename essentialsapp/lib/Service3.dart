@@ -4,7 +4,34 @@ import 'package:url_launcher/url_launcher.dart';
 launchroute() async {
   const url = 'https://www.google.co.in/maps/search/medical+near+me/@19.8566804,75.2535253,12z/data=!4m4!2m3!5m2!2e3!4e2';
   if (await canLaunch(url)) {
-    await launch(url, forceSafariVC: false,forceWebView: true);
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+launchroute1() async {
+  const url = 'https://www.netmeds.com';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+launchroute2() async {
+  const url = 'https://pharmeasy.in/online-medicine-order';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+launchroute3() async {
+  const url ='https://www.1mg.com';
+  if (await canLaunch(url)) {
+    await launch(url);
   } else {
     throw 'Could not launch $url';
   }
@@ -25,7 +52,7 @@ class Service3 extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: 40,
+              height: 60,
               width: 240,
               child: Card(
                 elevation : 20,
@@ -43,15 +70,15 @@ class Service3 extends StatelessWidget{
               ),
             ),
             Container(
-              height: 40,
+              height: 60,
               width: 240,
               child: Card(
                 elevation : 20,
                 child: Column(
                   children: <Widget>[
                     TextButton(
-                      onPressed: (){},
-                      child: Text('This is Service 1.2'),
+                      onPressed: ()=>launchroute1(),
+                      child: Text('Buy from NetMeds'),
                       style: TextButton.styleFrom(
                           primary: Colors.black
                       ),
@@ -61,15 +88,15 @@ class Service3 extends StatelessWidget{
               ),
             ),
             Container(
-              height: 40,
+              height: 60,
               width: 240,
               child: Card(
                 elevation : 20,
                 child: Column(
                   children: <Widget>[
                     TextButton(
-                      onPressed: (){},
-                      child: Text('This is Service 1.3'),
+                      onPressed: ()=>launchroute2(),
+                      child: Text('Buy from PharmEasy'),
                       style: TextButton.styleFrom(
                           primary: Colors.black
                       ),
@@ -79,15 +106,15 @@ class Service3 extends StatelessWidget{
               ),
             ),
             Container(
-              height: 40,
+              height: 60,
               width: 240,
               child: Card(
                 elevation: 20,
                 child: Column(
                   children: <Widget>[
                     TextButton(
-                      onPressed: (){},
-                      child: Text('This is Service 1.4'),
+                      onPressed: ()=>launchroute3(),
+                      child: Text('Buy from 1mg'),
                       style: TextButton.styleFrom(
                           primary: Colors.black
                       ),
