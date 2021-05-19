@@ -15,6 +15,16 @@ launchroute() async {
   }
 }
 
+sendmails() async {
+  const url = 'mailto:vedantpople4@gmail.com';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+
 void main() {
   runApp(MyApp());
 }
@@ -225,7 +235,30 @@ class HomePage extends StatelessWidget{
 
                 ],
               ),
-
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    height: 40,
+                    width: 240,
+                    child: Card(
+                      elevation : 20,
+                      child: Column(
+                        children: <Widget>[
+                          TextButton(
+                            onPressed: () => sendmails(),
+                            child: Text('Send Feedback'),
+                            style: TextButton.styleFrom(
+                                primary: Colors.black
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
