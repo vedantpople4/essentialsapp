@@ -4,7 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 launchroute() async {
   const url = 'https://www.google.co.in/maps/search/hospitals+near+me/@19.8566804,75.2535253,12z/data=!4m4!2m3!5m2!2e3!4e2';
   if (await canLaunch(url)) {
-    await launch(url, forceSafariVC: false,forceWebView: true);
+    await launch(url);
   } else {
     throw 'Could not launch $url';
   }

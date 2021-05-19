@@ -15,6 +15,15 @@ launchroute() async {
   }
 }
 
+launchroutenew() async {
+  const url = 'https://www.mygov.in/covid-19';
+  if (await canLaunch(url)) {
+    await launch(url, forceSafariVC: false,forceWebView: true);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
 sendmails() async {
   const url = 'mailto:vedantpople4@gmail.com';
   if (await canLaunch(url)) {
@@ -66,8 +75,8 @@ class HomePage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: 120,
-                    width: 120,
+                    height: 140,
+                    width: 140,
                     child: Card(
                       elevation : 20,
                       child: Column(
@@ -93,8 +102,8 @@ class HomePage extends StatelessWidget{
                     ),
                   ),
                   Container(
-                    height:120,
-                    width:120,
+                    height:140,
+                    width:140,
                     child: Card(
                       elevation : 20,
                       child: Column(
@@ -126,8 +135,8 @@ class HomePage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: 120,
-                    width: 120,
+                    height: 140,
+                    width: 140,
                     child: Card(
                       elevation : 20,
                       child: Column(
@@ -153,8 +162,8 @@ class HomePage extends StatelessWidget{
                     ),
                   ),
                   Container(
-                    height:120,
-                    width:120,
+                    height:140,
+                    width:140,
                     child: Card(
                       elevation : 20,
                       child: Column(
@@ -186,15 +195,20 @@ class HomePage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: 40,
-                    width: 240,
+                    height: 140,
+                    width: 140,
                     child: Card(
                       elevation : 20,
                       child: Column(
                         children: <Widget>[
+                          Image(
+                            image: AssetImage('images/dashboard.png'),
+                            height: 80,
+                            width: 80,
+                          ),
                           TextButton(
-                            onPressed: () => launchroute(),
-                            child: Text('Book Vaccination Slot'),
+                            onPressed: () => launchroutenew(),
+                            child: Text('COVID Dashboard'),
                             style: TextButton.styleFrom(
                                 primary: Colors.black
                             ),
@@ -203,7 +217,29 @@ class HomePage extends StatelessWidget{
                       ),
                     ),
                   ),
-
+                  Container(
+                    height:140,
+                    width:140,
+                    child: Card(
+                      elevation : 20,
+                      child: Column(
+                        children: <Widget>[
+                          Image(
+                            image: AssetImage('images/syringe.png'),
+                            height:80,
+                            width:80,
+                          ),
+                          TextButton(
+                            onPressed: () => launchroute(),
+                            child: Text('Vaccination'),
+                            style: TextButton.styleFrom(
+                                primary: Colors.black
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
               Row(
@@ -211,8 +247,8 @@ class HomePage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: 40,
-                    width: 240,
+                    height: 56,
+                    width: 280,
                     child: Card(
                       elevation : 20,
                       child: Column(
@@ -223,7 +259,7 @@ class HomePage extends StatelessWidget{
                                   builder: (context)=> TodoList())
                               );
                             },
-                            child: Text('Make List'),
+                            child: Text('Make a Note'),
                             style: TextButton.styleFrom(
                                 primary: Colors.black
                             ),
@@ -232,7 +268,6 @@ class HomePage extends StatelessWidget{
                       ),
                     ),
                   ),
-
                 ],
               ),
               Row(
@@ -240,8 +275,8 @@ class HomePage extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: 40,
-                    width: 240,
+                    height: 56,
+                    width: 280,
                     child: Card(
                       elevation : 20,
                       child: Column(
@@ -263,54 +298,7 @@ class HomePage extends StatelessWidget{
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
-        //currentIndex: _currentIndex,
-        //onTap: onTabTapped,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'List',
 
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.camera_outlined),
-            label: 'Camera',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people_alt),
-            label: 'About Us',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people_alt),
-            label: 'About Us',
-          ),
-        ],
-      ),
-
-
-      // CurvedNavigationBar(
-      //   backgroundColor: Colors.white,
-      //   height: 50,
-      //   items: <Widget>[
-      //     Icon(Icons.add,size: 50,),
-      //     Icon(Icons.list,size: 50,),
-      //     Icon(Icons.add_circle,size: 50,),
-      //     Icon(Icons.keyboard_arrow_down,size: 50,),
-      //     Icon(Icons.person,size: 50,),
-      //   ],
-      //   color: Colors.black,
-      //   buttonBackgroundColor: Colors.white,
-      //   animationCurve: Curves.easeInOut,
-      //   animationDuration: Duration(milliseconds: 200),
-      //   onTap: ,
-      // ),
     );
   }
 }
