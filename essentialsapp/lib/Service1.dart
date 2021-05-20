@@ -43,7 +43,7 @@ class Service1 extends StatelessWidget{
     return new Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Hospital'),
+        title: const Text('The Essential Services App'),
         backgroundColor: Colors.black,
       ),
       body: new Center(

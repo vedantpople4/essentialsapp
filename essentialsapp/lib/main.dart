@@ -4,6 +4,8 @@ import 'package:essentialsapp/Service2.dart';
 import 'package:essentialsapp/Service3.dart';
 import 'package:essentialsapp/Service4.dart';
 import 'package:essentialsapp/TodoList.dart';
+import 'package:essentialsapp/Aboutus.dart';
+import 'package:essentialsapp/Contactus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 launchroute() async {
@@ -33,7 +35,6 @@ sendmails() async {
   }
 }
 
-
 void main() {
   runApp(MyApp());
 }
@@ -60,6 +61,61 @@ class HomePage extends StatelessWidget{
       appBar: AppBar(
         title: const Text('The Essential Services App'),
         backgroundColor: Colors.black,
+
+      ),
+      drawer: Container(
+        width: 200,
+        child: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                child : Column(
+                  children: <Widget>[
+                    Image(
+                      image: AssetImage('images/applogo.jpg'),
+                      height: 100,
+                      width: 100,
+                    ),
+                    Text('Essential Services App'),
+                  ],
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+              ),
+              TextButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> Aboutus())
+                  );
+                },
+                child: Text('About the App'),
+                style: TextButton.styleFrom(
+                    primary: Colors.black
+                ),
+              ),
+              TextButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context)=> Contactus())
+                  );
+                },
+                child: Text('About the Team'),
+                style: TextButton.styleFrom(
+                    primary: Colors.black
+                ),
+              ),
+              TextButton(
+                onPressed: () => sendmails(),
+                child: Text('Send Feedback'),
+                style: TextButton.styleFrom(
+                    primary: Colors.black
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       body: new Center(
         child: Card(
@@ -260,30 +316,6 @@ class HomePage extends StatelessWidget{
                               );
                             },
                             child: Text('Make a Note'),
-                            style: TextButton.styleFrom(
-                                primary: Colors.black
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    height: 56,
-                    width: 280,
-                    child: Card(
-                      elevation : 20,
-                      child: Column(
-                        children: <Widget>[
-                          TextButton(
-                            onPressed: () => sendmails(),
-                            child: Text('Send Feedback'),
                             style: TextButton.styleFrom(
                                 primary: Colors.black
                             ),
